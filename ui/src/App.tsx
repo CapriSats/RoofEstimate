@@ -41,15 +41,15 @@ function Home() {
       <header className="border-b border-border/60 bg-card/50 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <Wordmark subtitle={!showResults} />
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             {showResults && (
               <Button
-                variant="ghost"
+                variant="outline"
                 size="sm"
                 onClick={pipeline.reset}
-                className="text-muted-foreground"
+                className="font-semibold"
               >
-                New estimate
+                ← New estimate
               </Button>
             )}
             <SettingsDialog />
@@ -140,6 +140,8 @@ function Home() {
                     roof_sqft={pipeline.result.estimate.roof_sqft}
                     pitch_x_12={pipeline.result.estimate.pitch_x_12}
                     valid_until={pipeline.result.estimate.valid_until}
+                    linear_measurements={pipeline.result.estimate.linear_measurements}
+                    waste_rationale={pipeline.result.estimate.waste_rationale}
                   />
                   <div className="flex flex-col gap-3 sm:flex-row">
                     <Button

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Loader2, MapPin, FlaskConical } from "lucide-react";
+import { Loader2, MapPin, FlaskConical, AlertCircle } from "lucide-react";
 import { loadGooglePlaces } from "@/lib/googlePlaces";
 import {
   DropdownMenu,
@@ -33,10 +33,32 @@ const TEST_ADDRESSES = [
   "1261 20th Street, Newport News, VA 23607",
 ];
 
+function validateAddress(address: string): { valid: boolean; error?: string } {
+  const trimmed = address.trim();
+  if (!trimmed) return { valid: false, error: "Address cannot be empty" };
+
+  // Check for basic components: should have numbers, letters, and comma (for city/state separation)
+  if (!/\d/.test(trimmed)) {
+    return { valid: false, error: "Address should include a street number" };
+  }
+
+  if (!trimmed.includes(",")) {
+    return { valid: false, error: "Please enter a complete address with city and state (e.g., 123 Main St, Springfield, MO 65802)" };
+  }
+
+  // Check for state abbreviation (2 uppercase letters after comma)
+  if (!/,\s*[A-Z]{2}(\s+\d{5})?/.test(trimmed)) {
+    return { valid: false, error: "Please include state abbreviation (e.g., TX, CA, NY)" };
+  }
+
+  return { valid: true };
+}
+
 export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [value, setValue] = useState("");
   const [placesReady, setPlacesReady] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined;
@@ -60,6 +82,7 @@ export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
           const addr = place?.formatted_address;
           if (addr) {
             setValue(addr);
+            setError(null);
             onSubmit(addr);
           }
         });
@@ -76,11 +99,21 @@ export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleSubmit = (address: string) => {
+    const validation = validateAddress(address);
+    if (!validation.valid) {
+      setError(validation.error || "Invalid address");
+      return;
+    }
+    setError(null);
+    onSubmit(address);
+  };
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (value.trim()) onSubmit(value.trim());
+        if (value.trim()) handleSubmit(value.trim());
       }}
       className="w-full"
     >
@@ -107,6 +140,12 @@ export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
           </button>
         )}
       </div>
+      {error && (
+        <div className="mt-2 flex items-start gap-2 rounded-lg border border-destructive/50 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{error}</span>
+        </div>
+      )}
       <div className="mt-3 flex items-center justify-center gap-2 text-sm text-muted-foreground">
         <span>Try a test address:</span>
         <DropdownMenu>
@@ -129,6 +168,7 @@ export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
                 key={`cal-${idx}`}
                 onClick={() => {
                   setValue(address);
+                  setError(null);
                   onSubmit(address);
                 }}
                 className="font-mono text-xs"
@@ -143,6 +183,7 @@ export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
                 key={`test-${idx}`}
                 onClick={() => {
                   setValue(address);
+                  setError(null);
                   onSubmit(address);
                 }}
                 className="font-mono text-xs"

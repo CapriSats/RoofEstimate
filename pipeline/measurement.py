@@ -131,6 +131,21 @@ def measure_roof(address: str, state: Optional[str] = None) -> dict:
     # ── Combine according to mode ────────────────────────────────────────────
     final = _combine(solar, osm_result, ms_result, vision_pitch, mode=SOLAR_MODE)
 
+    # ── Surface the inputs the estimate engine needs ────────────────────
+    # perimeter_lf: drives drip edge / starter strip / eave shield quantities
+    # num_segments: drives roof-style heuristic (hip vs gable) for ridge/hip/valley LF
+    from pipeline.linear_measurements import polygon_perimeter_lf
+    perimeter_lf = None
+    for src in (ms_result, osm_result):
+        if src and src.get("polygon"):
+            try:
+                perimeter_lf = polygon_perimeter_lf(src["polygon"])
+                break
+            except Exception:
+                pass  # shapely/pyproj failure → estimate falls back to sqrt(footprint)
+    final["perimeter_lf"] = perimeter_lf
+    final["num_segments"] = (solar or {}).get("num_segments", 0)
+
     result = {
         "address": address,
         "mode": SOLAR_MODE,

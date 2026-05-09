@@ -1,26 +1,44 @@
 {
+  "_comment": "SKU-level pricing catalog. Material prices are 2026 national averages; regional_factors adjust labor (not materials, since materials ship roughly flat). All quantities are computed by pipeline/estimate.py from roof_sqft + linear_measurements + pitch + num_segments.",
+
   "tiers": {
     "good": {
-      "label": "Good — 3-Tab Asphalt",
-      "material_per_sqft": 1.20,
-      "warranty": "25 year"
+      "label": "Good — 3-Tab Asphalt (Owens Corning Supreme)",
+      "sku": "shingles_3tab_oc_supreme",
+      "warranty": "25 year",
+      "bundles_per_square": 3.0,
+      "bundle_price": 28.00
     },
     "better": {
       "label": "Better — Architectural (GAF Timberline HDZ)",
-      "material_per_sqft": 1.80,
-      "warranty": "30–50 year"
+      "sku": "shingles_arch_gaf_hdz",
+      "warranty": "30–50 year (Lifetime ltd)",
+      "bundles_per_square": 3.0,
+      "bundle_price": 38.00
     },
     "best": {
-      "label": "Best — Designer / Impact-Resistant",
-      "material_per_sqft": 3.50,
-      "warranty": "Lifetime"
+      "label": "Best — Designer Impact-Resistant (CertainTeed Presidential)",
+      "sku": "shingles_designer_ct_presidential",
+      "warranty": "Lifetime",
+      "bundles_per_square": 4.0,
+      "bundle_price": 62.00
     }
   },
-  "supplementary_per_sqft": 0.65,
-  "base_labor_per_sqft": 1.75,
-  "tearoff_per_sqft": 1.20,
-  "disposal_per_sqft": 0.60,
+
+  "underlayment_per_roll": 95.00,
+  "ice_water_shield_per_roll": 78.00,
+  "drip_edge_per_lf": 1.55,
+  "starter_per_lf": 1.20,
+  "ridge_cap_per_lf": 4.50,
+  "valley_flashing_per_lf": 6.20,
+  "pipe_boot_each": 32.00,
+  "nails_per_box": 38.00,
+
+  "tearoff_per_square": 65.00,
+  "install_per_square": 95.00,
+  "disposal_flat": 450.00,
   "permit_allowance": 350,
+
   "regional_factors": {
     "AL": 0.90, "AK": 1.50, "AZ": 0.95, "AR": 0.88,
     "CA": 1.30, "CO": 1.05, "CT": 1.20, "DE": 1.05,
@@ -36,6 +54,7 @@
     "VT": 1.05, "VA": 1.00, "WA": 1.10, "WV": 0.88,
     "WI": 1.00, "WY": 0.92
   },
+
   "default_roofer": {
     "name": "Acme Roofing",
     "phone": "(555) 000-0000",

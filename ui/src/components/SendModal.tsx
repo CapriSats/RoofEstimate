@@ -32,8 +32,8 @@ export function SendModal({ open, onOpenChange }: Props) {
       setSending(false);
       onOpenChange(false);
       setPhone("");
-      toast.success("Estimate sent!", {
-        description: `A link was texted to ${phone}.`,
+      toast.success("📱 Demo: Estimate ready to send", {
+        description: `In production, this would text a link to ${phone}.`,
       });
     }, 600);
   };
@@ -44,7 +44,10 @@ export function SendModal({ open, onOpenChange }: Props) {
         <DialogHeader>
           <DialogTitle>Send to homeowner</DialogTitle>
           <DialogDescription>
-            We'll text a link to view this estimate.
+            <span className="block">We'll text a link to view this estimate.</span>
+            <span className="mt-2 inline-block rounded-md bg-amber-500/10 px-2 py-1 text-xs font-semibold text-amber-600 dark:text-amber-400">
+              ⚠️ DEMO MODE — No actual SMS will be sent
+            </span>
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-2 py-2">

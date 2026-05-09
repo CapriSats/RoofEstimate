@@ -78,7 +78,7 @@ export interface FinalResult {
   address: string;
   geocode: { lat: number; lon: number };
   footprint: { sqft: number; source: string; confidence: number };
-  pitch: { x_12: number; method: string };
+  pitch: { x_12: number; method: string; multiplier?: number };
   area: { roof_sqft: number };
   estimate: {
     tiers: {
@@ -89,6 +89,11 @@ export interface FinalResult {
     roof_sqft: number;
     pitch_x_12: number;
     valid_until: string;
+    // NEW (optional for back-compat):
+    linear_measurements?: LinearMeasurements;
+    waste_rationale?: string;
+    waste_factor?: number;
+    regional_factor?: number;
   };
   mode?: string;
   sources?: SourcesBreakdown;
@@ -104,12 +109,42 @@ export interface FinalResult {
   warning?: string;
 }
 
+export interface LineItem {
+  category: string;        // "materials" | "labor" | "permit"
+  sku: string;
+  description: string;
+  qty: number;
+  unit: string;            // "bundle" | "roll" | "linear ft" | "square" | "ea" | "box" | "job"
+  unit_price_usd: number;
+  subtotal_usd: number;
+}
+
+export interface LinearMeasurements {
+  eaves_lf: number;
+  rakes_lf: number;
+  ridge_lf: number;
+  hip_lf: number;
+  valley_lf: number;
+  total_perimeter_lf: number;
+  method: string;
+}
+
 export interface TierData {
   label: string;
   subtotal: number;
   range_low: number;
   range_high: number;
   warranty: string;
+  // NEW (optional for back-compat with older API responses):
+  line_items?: LineItem[];
+  subtotals_by_category?: Record<string, number>;
+  // Legacy bucket fields the API still emits:
+  material_cost?: number;
+  supplementary?: number;
+  labor_cost?: number;
+  tearoff?: number;
+  disposal?: number;
+  permit?: number;
 }
 
 export type Status = "idle" | "running" | "complete" | "error";

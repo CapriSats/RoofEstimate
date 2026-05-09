@@ -196,6 +196,8 @@ async def _run_pipeline(req: EstimateRequest) -> AsyncIterator[str]:
             final["pitch_x_12"],
             state=state or "national",
             waste_factor=req.waste_factor,
+            perimeter_lf=final.get("perimeter_lf"),
+            num_segments=final.get("num_segments", 0),
             roofer_profile=req.roofer_profile,
         )
         yield event({"stage": "estimate", "status": "done", "detail": "Estimate complete"})
