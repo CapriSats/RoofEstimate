@@ -37,18 +37,28 @@ function validateAddress(address: string): { valid: boolean; error?: string } {
   const trimmed = address.trim();
   if (!trimmed) return { valid: false, error: "Address cannot be empty" };
 
-  // Check for basic components: should have numbers, letters, and comma (for city/state separation)
+  // Check for basic components: should have numbers (street number)
   if (!/\d/.test(trimmed)) {
     return { valid: false, error: "Address should include a street number" };
   }
 
+  // Check for at least one comma (city/state separation)
   if (!trimmed.includes(",")) {
-    return { valid: false, error: "Please enter a complete address with city and state (e.g., 123 Main St, Springfield, MO 65802)" };
+    return { valid: false, error: "Please enter a complete address with city and state (e.g., 4204 Gallego Circle, Austin, TX 78738)" };
   }
 
-  // Check for state abbreviation (2 uppercase letters after comma)
-  if (!/,\s*[A-Z]{2}(\s+\d{5})?/.test(trimmed)) {
-    return { valid: false, error: "Please include state abbreviation (e.g., TX, CA, NY)" };
+  // Split by comma to check components
+  const parts = trimmed.split(",").map(p => p.trim());
+
+  // Need at least 2 parts (street+city, state or street, city+state)
+  if (parts.length < 2) {
+    return { valid: false, error: "Please include city and state" };
+  }
+
+  // Check that last part has at least 2 letters (state code somewhere)
+  const lastPart = parts[parts.length - 1];
+  if (!/[A-Za-z]{2}/.test(lastPart)) {
+    return { valid: false, error: "Please include state (e.g., TX, California, etc.)" };
   }
 
   return { valid: true };

@@ -230,9 +230,17 @@ export function EstimateTiers({
       </div>
 
       {/* Footer line: roof size, pitch, validity */}
-      <div className="text-xs text-muted-foreground">
-        Based on {roof_sqft.toLocaleString()} sqft @ {pitch_x_12}:12 pitch
-        {valid_until ? <> · Valid until {valid_until}</> : null}
+      <div className="space-y-2">
+        <div className="text-sm">
+          <span className="text-muted-foreground">Based on </span>
+          <span className="font-bold text-foreground">{roof_sqft.toLocaleString()} sqft</span>
+          <span className="text-muted-foreground"> @ {pitch_x_12}:12 pitch</span>
+          {valid_until && <span className="text-muted-foreground"> · Valid until {valid_until}</span>}
+        </div>
+        <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-3 py-2 text-xs text-amber-700 dark:text-amber-400">
+          <strong>AI-Generated Estimate:</strong> Measurements are derived from aerial imagery using computer vision and may have ±5-10% variance.
+          This estimate should be verified with an on-site inspection before final project commitment.
+        </div>
       </div>
     </div>
   );
