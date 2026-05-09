@@ -5,6 +5,8 @@
 *.pem
 *.key
 ec2-instance.json
+SETUP_NEW_MACHINE.md
+.aws-credentials
 
 # ── Python ───────────────────────────────────────────────────────────────────
 venv/
