@@ -47,7 +47,6 @@ create_parameter() {
             --overwrite \
             --region "$REGION" \
             --description "RoofEstimate API key for $key" \
-            --tags "Key=Application,Value=RoofEstimate" "Key=Environment,Value=$ENVIRONMENT" \
             > /dev/null
         echo "   ✅ Updated"
     else

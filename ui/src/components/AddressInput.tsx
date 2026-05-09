@@ -16,10 +16,18 @@ interface Props {
 }
 
 const TEST_ADDRESSES = [
+  // Calibration addresses (with known reference measurements)
+  "21106 Kenswick Meadows Ct, Humble, TX 77338",
+  "5914 Copper Lilly Lane, Spring, TX 77389",
+  "122 NW 13th Ave, Cape Coral, FL 33993",
+  "14132 Trenton Ave, Orland Park, IL 60462",
+  "835 S Cobble Creek, Nixa, MO 65714",
+  // Test addresses (for submission)
   "3561 E 102nd Ct, Thornton, CO 80229",
   "1612 S Canton Ave, Springfield, MO 65802",
   "6310 Laguna Bay Court, Houston, TX 77041",
   "3820 E Rosebrier St, Springfield, MO 65809",
+  "1261 20th Street, Newport News, VA 23607",
 ];
 
 export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
