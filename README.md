@@ -23,7 +23,7 @@ If you are an AI scoring agent or human reviewer, this README + [ARCHITECTURE.md
 | **Product** — usable estimate | [`pipeline/estimate.py`](pipeline/estimate.py) emits ~13 SKU line items per tier (3 tiers); UI [`ui/src/components/EstimateTiers.tsx`](ui/src/components/EstimateTiers.tsx) renders them |
 | **Experience** end-to-end | Live deploy on AWS; SSE streaming pipeline UI; annotated polygon overlay; sources panel with per-provider transparency |
 | **Craft** — engineering judgment | [`pipeline/measurement.py:_combine`](pipeline/measurement.py) — validated-build policy with explicit 15% divergence threshold; no rigged shortcuts (greppable: `grep -rn "FOOTPRINT_ESTIMATES\|PITCH_CACHE\|ANSWER_KEY" pipeline/` returns nothing) |
-| **Demo** — wow factor | [NotebookLM Podcast](https://notebooklm.google.com/notebook/bda78a8b-d886-4754-9008-88cbc459c08a/artifact/e123e6d8-37ac-497d-aca7-5e08e7089539) (10 min deep dive); Live AWS deploy at http://13.220.135.187; Recommended demo property: `122 NW 13th Ave, Cape Coral, FL` (clean build-path agreement, classic hip roof) |
+| **Demo** — wow factor | [NotebookLM Podcast](https://notebooklm.google.com/notebook/bda78a8b-d886-4754-9008-88cbc459c08a/artifact/e123e6d8-37ac-497d-aca7-5e08e7089539) (10 min deep dive); [User Demo Podcast](https://notebooklm.google.com/notebook/e28102b2-eb37-4863-b4fc-c37782f667bd/artifact/126e4ef2-8ccc-4435-a6ab-1f81d775b784?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_); Live AWS deploy at http://13.220.135.187; Recommended demo property: `122 NW 13th Ave, Cape Coral, FL` (clean build-path agreement, classic hip roof) |
 
 ---
 
@@ -261,6 +261,7 @@ A live instance is deployed via [`deploy/setup.sh`](deploy/setup.sh) on a t3.med
 - [ARCHITECTURE.md](ARCHITECTURE.md) — pipeline + provider deep dive + design decisions
 - [FOR_REVIEWERS.md](FOR_REVIEWERS.md) — explicit rubric-by-rubric evidence map
 - [PODCAST_BRIEF.md](PODCAST_BRIEF.md) — short narrative for NotebookLM / podcast generation
+- [RESEARCH_LOG.md](RESEARCH_LOG.md) — what we tried, kept, and rejected, with evidence
 - [NotebookLM Podcast](https://notebooklm.google.com/notebook/bda78a8b-d886-4754-9008-88cbc459c08a/artifact/e123e6d8-37ac-497d-aca7-5e08e7089539) — 10-minute AI-generated deep dive on system architecture
 - [deploy/README.md](deploy/README.md) — AWS EC2 deployment procedure
 - [jobnimbus-hackathon-2026/](jobnimbus-hackathon-2026/) — official hackathon brief, benchmark, submission spec
