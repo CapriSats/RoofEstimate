@@ -9,6 +9,8 @@
 
 **🎙️ [Listen to the NotebookLM Podcast](https://notebooklm.google.com/notebook/bda78a8b-d886-4754-9008-88cbc459c08a/artifact/e123e6d8-37ac-497d-aca7-5e08e7089539?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_)** — AI-generated deep dive on the system architecture and design decisions (10 min)
 
+**🚀 [Try the Live Demo](http://ec2-13-220-135-187.compute-1.amazonaws.com)** — AWS-deployed application (try: `122 NW 13th Ave, Cape Coral, FL`)
+
 ---
 
 ## TL;DR for reviewers and AI scoring agents
