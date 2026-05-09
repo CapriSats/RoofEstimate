@@ -40,7 +40,10 @@ function Home() {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border/60 bg-card/50 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <Wordmark subtitle={!showResults} />
+          <Wordmark
+            subtitle={!showResults}
+            onReset={showResults ? pipeline.reset : undefined}
+          />
           <div className="flex items-center gap-2">
             {showResults && (
               <Button

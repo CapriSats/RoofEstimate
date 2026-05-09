@@ -1,6 +1,11 @@
-export function Wordmark({ subtitle = true }: { subtitle?: boolean }) {
-  return (
-    <div className="flex flex-col">
+interface Props {
+  subtitle?: boolean;
+  onReset?: () => void;
+}
+
+export function Wordmark({ subtitle = true, onReset }: Props) {
+  const content = (
+    <>
       <div className="flex items-center gap-2">
         <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground">
           <svg
@@ -25,6 +30,19 @@ export function Wordmark({ subtitle = true }: { subtitle?: boolean }) {
           Instant roof measurements. Send an estimate in 60 seconds.
         </p>
       )}
-    </div>
+    </>
   );
+
+  if (onReset) {
+    return (
+      <button
+        onClick={onReset}
+        className="flex flex-col text-left transition hover:opacity-70"
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return <div className="flex flex-col">{content}</div>;
 }
