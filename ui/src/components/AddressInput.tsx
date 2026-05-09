@@ -5,6 +5,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
@@ -15,14 +17,15 @@ interface Props {
   autoFocus?: boolean;
 }
 
-const TEST_ADDRESSES = [
-  // Calibration addresses (with known reference measurements)
+const CALIBRATION_ADDRESSES = [
   "21106 Kenswick Meadows Ct, Humble, TX 77338",
   "5914 Copper Lilly Lane, Spring, TX 77389",
   "122 NW 13th Ave, Cape Coral, FL 33993",
   "14132 Trenton Ave, Orland Park, IL 60462",
   "835 S Cobble Creek, Nixa, MO 65714",
-  // Test addresses (for submission)
+];
+
+const TEST_ADDRESSES = [
   "3561 E 102nd Ct, Thornton, CO 80229",
   "1612 S Canton Ave, Springfield, MO 65802",
   "6310 Laguna Bay Court, Houston, TX 77041",
@@ -120,9 +123,24 @@ export function AddressInput({ onSubmit, loading, autoFocus }: Props) {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="center" className="w-80">
+            <DropdownMenuLabel>Calibration (with known benchmarks)</DropdownMenuLabel>
+            {CALIBRATION_ADDRESSES.map((address, idx) => (
+              <DropdownMenuItem
+                key={`cal-${idx}`}
+                onClick={() => {
+                  setValue(address);
+                  onSubmit(address);
+                }}
+                className="font-mono text-xs"
+              >
+                {address}
+              </DropdownMenuItem>
+            ))}
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel>Test (for submission)</DropdownMenuLabel>
             {TEST_ADDRESSES.map((address, idx) => (
               <DropdownMenuItem
-                key={idx}
+                key={`test-${idx}`}
                 onClick={() => {
                   setValue(address);
                   onSubmit(address);
