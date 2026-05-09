@@ -1,0 +1,2459 @@
+{
+  "submission": {
+    "hackathon": "JobNimbus AI Hackathon 2026",
+    "team": "CapriSats",
+    "mode": "validated_build",
+    "policy": "Each property is computed two ways: BUILD PATH (Microsoft Building Footprints polygon \u00d7 Vision LLM-derived pitch) and SOLAR cross-check (Google Solar API). When the two agree within 15%, the build path is submitted. When they diverge by more than 15%, Solar acts as a documented tiebreaker. Solar is a configurable provider (SOLAR_MODE=off|fusion|primary); pipeline runs without Solar when off.",
+    "generated_at": "2026-05-09T18:29:45Z",
+    "properties": [
+      {
+        "id": "t1",
+        "address": "3561 E 102nd Ct, Thornton, CO 80229",
+        "state": "CO",
+        "roof_sqft": 1896,
+        "footprint_sqft": 1696,
+        "pitch_x_12": 6,
+        "perimeter_lf": 178.65610760305273,
+        "num_segments": 9,
+        "confidence": 0.82,
+        "method": "build_path_solar_validated",
+        "final_source": "ms_buildings+vision_llm",
+        "cross_check": {
+          "solar_roof_sqft": 2081,
+          "divergence_pct": 9.8,
+          "threshold_pct": 15.0
+        },
+        "sources_summary": {
+          "google_solar": {
+            "roof_sqft": 2081,
+            "footprint_sqft": 1681,
+            "pitch_x_12": 9,
+            "pitch_multiplier": 1.25,
+            "pitch_deg": 36.0,
+            "num_segments": 9,
+            "imagery_quality": "HIGH",
+            "source": "google_solar",
+            "confidence": 0.95,
+            "building_offset_m": 2.1,
+            "lat": 39.8811632,
+            "lon": -104.9453839,
+            "geocode_precision": "ROOFTOP"
+          },
+          "osm": {
+            "footprint_sqft": 4470,
+            "source": "osm",
+            "confidence": 0.55
+          },
+          "ms_buildings": {
+            "footprint_sqft": 1696,
+            "source": "ms_buildings",
+            "confidence": 0.92
+          },
+          "vision_llm_pitch": {
+            "pitch_x_12": 6,
+            "pitch_multiplier": 1.118,
+            "method": "vision_llm",
+            "confidence": 0.72,
+            "reasoning": "The roof faces show moderate visible area from above with moderate foreshortening, and the shadow cast by the ridge is consistent with a standard 6:12 pitch; the complex hip-and-gable roof structure with visible but not overly compressed faces suggests a typical moderate slope.",
+            "imagery_source": "google_static_satellite"
+          }
+        },
+        "estimate": {
+          "tiers": {
+            "good": {
+              "label": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+              "warranty": "25 year",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_3tab_oc_supreme",
+                  "description": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+                  "qty": 65,
+                  "unit": "bundle",
+                  "unit_price_usd": 28.0,
+                  "subtotal_usd": 1820.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 285.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 179,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 277.45
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 179,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 214.8
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 138,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 621.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 53,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 328.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 6,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 228.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 19.0,
+                  "unit": "square",
+                  "unit_price_usd": 68.25,
+                  "subtotal_usd": 1296.75
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 19.0,
+                  "unit": "square",
+                  "unit_price_usd": 99.75,
+                  "subtotal_usd": 1895.25
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 4104.85,
+                "labor": 3642.0,
+                "permit": 350.0
+              },
+              "subtotal": 8100,
+              "range_low": 7400,
+              "range_high": 8900,
+              "material_cost": 4104.85,
+              "supplementary": 0,
+              "labor_cost": 3642.0,
+              "tearoff": 1296.75,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "better": {
+              "label": "Better \u2014 Architectural (GAF Timberline HDZ)",
+              "warranty": "30\u201350 year (Lifetime ltd)",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_arch_gaf_hdz",
+                  "description": "Better \u2014 Architectural (GAF Timberline HDZ)",
+                  "qty": 65,
+                  "unit": "bundle",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 2470.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 285.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 179,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 277.45
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 179,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 214.8
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 138,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 621.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 53,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 328.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 6,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 228.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 19.0,
+                  "unit": "square",
+                  "unit_price_usd": 68.25,
+                  "subtotal_usd": 1296.75
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 19.0,
+                  "unit": "square",
+                  "unit_price_usd": 99.75,
+                  "subtotal_usd": 1895.25
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 4754.85,
+                "labor": 3642.0,
+                "permit": 350.0
+              },
+              "subtotal": 8700,
+              "range_low": 8000,
+              "range_high": 9600,
+              "material_cost": 4754.85,
+              "supplementary": 0,
+              "labor_cost": 3642.0,
+              "tearoff": 1296.75,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "best": {
+              "label": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+              "warranty": "Lifetime",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_designer_ct_presidential",
+                  "description": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+                  "qty": 87,
+                  "unit": "bundle",
+                  "unit_price_usd": 62.0,
+                  "subtotal_usd": 5394.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 285.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 179,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 277.45
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 179,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 214.8
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 138,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 621.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 53,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 328.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 6,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 228.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 19.0,
+                  "unit": "square",
+                  "unit_price_usd": 68.25,
+                  "subtotal_usd": 1296.75
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 19.0,
+                  "unit": "square",
+                  "unit_price_usd": 99.75,
+                  "subtotal_usd": 1895.25
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 7678.85,
+                "labor": 3642.0,
+                "permit": 350.0
+              },
+              "subtotal": 11700,
+              "range_low": 10700,
+              "range_high": 12800,
+              "material_cost": 7678.85,
+              "supplementary": 0,
+              "labor_cost": 3642.0,
+              "tearoff": 1296.75,
+              "disposal": 450.0,
+              "permit": 350.0
+            }
+          },
+          "roof_sqft": 1896,
+          "pitch_x_12": 6,
+          "linear_measurements": {
+            "eaves_lf": 152,
+            "rakes_lf": 27,
+            "ridge_lf": 38,
+            "hip_lf": 100,
+            "valley_lf": 53,
+            "total_perimeter_lf": 179,
+            "method": "perimeter_measured_from_polygon + complex_hip_style_9_facets"
+          },
+          "waste_factor": 0.14,
+          "waste_rationale": "base 10% \u00b7 +4% complexity (9 facets) \u2192 14%",
+          "regional_factor": 1.05,
+          "valid_until": "2026-06-08",
+          "roofer": {
+            "name": "Acme Roofing",
+            "phone": "(555) 000-0000",
+            "license": "ROC-000000",
+            "logo": null,
+            "tagline": "Quality roofing since 1998"
+          }
+        }
+      },
+      {
+        "id": "t2",
+        "address": "1612 S Canton Ave, Springfield, MO 65802",
+        "state": "MO",
+        "roof_sqft": 2595,
+        "footprint_sqft": 2321,
+        "pitch_x_12": 6,
+        "perimeter_lf": 202.55660386397292,
+        "num_segments": 10,
+        "confidence": 0.81,
+        "method": "build_path_solar_validated",
+        "final_source": "ms_buildings+vision_llm",
+        "cross_check": {
+          "solar_roof_sqft": 2757,
+          "divergence_pct": 6.2,
+          "threshold_pct": 15.0
+        },
+        "sources_summary": {
+          "google_solar": {
+            "roof_sqft": 2757,
+            "footprint_sqft": 2363,
+            "pitch_x_12": 7,
+            "pitch_multiplier": 1.158,
+            "pitch_deg": 30.9,
+            "num_segments": 10,
+            "imagery_quality": "HIGH",
+            "source": "google_solar",
+            "confidence": 0.95,
+            "building_offset_m": 0.2,
+            "lat": 37.1860933,
+            "lon": -93.36959139999999,
+            "geocode_precision": "ROOFTOP"
+          },
+          "osm": null,
+          "ms_buildings": {
+            "footprint_sqft": 2321,
+            "source": "ms_buildings",
+            "confidence": 0.92
+          },
+          "vision_llm_pitch": {
+            "pitch_x_12": 6,
+            "pitch_multiplier": 1.118,
+            "method": "vision_llm",
+            "confidence": 0.7,
+            "reasoning": "The roof shows moderate face area visible from above with a complex hip-and-gable design, moderate shadow lengths from the ridge lines, and visible roof face foreshortening consistent with a standard 6:12 pitch typical of this style of residential home.",
+            "imagery_source": "google_static_satellite"
+          }
+        },
+        "estimate": {
+          "tiers": {
+            "good": {
+              "label": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+              "warranty": "25 year",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_3tab_oc_supreme",
+                  "description": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+                  "qty": 89,
+                  "unit": "bundle",
+                  "unit_price_usd": 28.0,
+                  "subtotal_usd": 2492.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 285.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 202,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 313.1
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 202,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 242.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 190,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 855.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 73,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 452.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 8,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 304.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 25.9,
+                  "unit": "square",
+                  "unit_price_usd": 58.5,
+                  "subtotal_usd": 1515.15
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 25.9,
+                  "unit": "square",
+                  "unit_price_usd": 85.5,
+                  "subtotal_usd": 2214.45
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 5274.1,
+                "labor": 4179.6,
+                "permit": 350.0
+              },
+              "subtotal": 9800,
+              "range_low": 9000,
+              "range_high": 10800,
+              "material_cost": 5274.1,
+              "supplementary": 0,
+              "labor_cost": 4179.6,
+              "tearoff": 1515.15,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "better": {
+              "label": "Better \u2014 Architectural (GAF Timberline HDZ)",
+              "warranty": "30\u201350 year (Lifetime ltd)",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_arch_gaf_hdz",
+                  "description": "Better \u2014 Architectural (GAF Timberline HDZ)",
+                  "qty": 89,
+                  "unit": "bundle",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 3382.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 285.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 202,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 313.1
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 202,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 242.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 190,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 855.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 73,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 452.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 8,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 304.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 25.9,
+                  "unit": "square",
+                  "unit_price_usd": 58.5,
+                  "subtotal_usd": 1515.15
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 25.9,
+                  "unit": "square",
+                  "unit_price_usd": 85.5,
+                  "subtotal_usd": 2214.45
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 6164.1,
+                "labor": 4179.6,
+                "permit": 350.0
+              },
+              "subtotal": 10700,
+              "range_low": 9800,
+              "range_high": 11800,
+              "material_cost": 6164.1,
+              "supplementary": 0,
+              "labor_cost": 4179.6,
+              "tearoff": 1515.15,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "best": {
+              "label": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+              "warranty": "Lifetime",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_designer_ct_presidential",
+                  "description": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+                  "qty": 119,
+                  "unit": "bundle",
+                  "unit_price_usd": 62.0,
+                  "subtotal_usd": 7378.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 285.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 202,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 313.1
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 202,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 242.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 190,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 855.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 73,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 452.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 8,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 304.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 25.9,
+                  "unit": "square",
+                  "unit_price_usd": 58.5,
+                  "subtotal_usd": 1515.15
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 25.9,
+                  "unit": "square",
+                  "unit_price_usd": 85.5,
+                  "subtotal_usd": 2214.45
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 10160.1,
+                "labor": 4179.6,
+                "permit": 350.0
+              },
+              "subtotal": 14700,
+              "range_low": 13500,
+              "range_high": 16200,
+              "material_cost": 10160.1,
+              "supplementary": 0,
+              "labor_cost": 4179.6,
+              "tearoff": 1515.15,
+              "disposal": 450.0,
+              "permit": 350.0
+            }
+          },
+          "roof_sqft": 2595,
+          "pitch_x_12": 6,
+          "linear_measurements": {
+            "eaves_lf": 172,
+            "rakes_lf": 30,
+            "ridge_lf": 52,
+            "hip_lf": 138,
+            "valley_lf": 73,
+            "total_perimeter_lf": 203,
+            "method": "perimeter_measured_from_polygon + complex_hip_style_10_facets"
+          },
+          "waste_factor": 0.14,
+          "waste_rationale": "base 10% \u00b7 +4% complexity (10 facets) \u2192 14%",
+          "regional_factor": 0.9,
+          "valid_until": "2026-06-08",
+          "roofer": {
+            "name": "Acme Roofing",
+            "phone": "(555) 000-0000",
+            "license": "ROC-000000",
+            "logo": null,
+            "tagline": "Quality roofing since 1998"
+          }
+        }
+      },
+      {
+        "id": "t3",
+        "address": "6310 Laguna Bay Court, Houston, TX 77041",
+        "state": "TX",
+        "roof_sqft": 4186,
+        "footprint_sqft": 3417,
+        "pitch_x_12": 8,
+        "perimeter_lf": 217.9661515770591,
+        "num_segments": 20,
+        "confidence": 0.95,
+        "method": "solar_tiebreaker_on_divergence",
+        "final_source": "solar_tiebreaker",
+        "cross_check": {
+          "build_path_roof_sqft": 2720,
+          "build_path_source": "ms_buildings+vision_llm",
+          "divergence_pct": 53.9,
+          "threshold_pct": 15.0,
+          "rationale": "build path diverged from Solar by >15%; Solar used as tiebreaker (validated against public records on representative cases \u2014 see README)"
+        },
+        "sources_summary": {
+          "google_solar": {
+            "roof_sqft": 4186,
+            "footprint_sqft": 3417,
+            "pitch_x_12": 8,
+            "pitch_multiplier": 1.202,
+            "pitch_deg": 35.2,
+            "num_segments": 20,
+            "imagery_quality": "HIGH",
+            "source": "google_solar",
+            "confidence": 0.95,
+            "building_offset_m": 3.8,
+            "lat": 29.8603157,
+            "lon": -95.59039589999999,
+            "geocode_precision": "ROOFTOP"
+          },
+          "osm": {
+            "footprint_sqft": 2419,
+            "source": "osm",
+            "confidence": 0.9
+          },
+          "ms_buildings": {
+            "footprint_sqft": 2433,
+            "source": "ms_buildings",
+            "confidence": 0.92
+          },
+          "vision_llm_pitch": {
+            "pitch_x_12": 6,
+            "pitch_multiplier": 1.118,
+            "method": "vision_llm",
+            "confidence": 0.7,
+            "reasoning": "The roof faces show moderate foreshortening with a complex hip-and-gable layout, visible roof face area is substantial but not flat, and shadow lengths from ridges are moderate, consistent with a standard 6:12 pitch typical of suburban homes.",
+            "imagery_source": "google_static_satellite"
+          }
+        },
+        "estimate": {
+          "tiers": {
+            "good": {
+              "label": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+              "warranty": "25 year",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_3tab_oc_supreme",
+                  "description": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+                  "qty": 146,
+                  "unit": "bundle",
+                  "unit_price_usd": 28.0,
+                  "subtotal_usd": 4088.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 475.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 218,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 337.9
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 218,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 261.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 306,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 1377.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 117,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 725.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 13,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 494.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 41.9,
+                  "unit": "square",
+                  "unit_price_usd": 61.75,
+                  "subtotal_usd": 2587.32
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.15)",
+                  "qty": 41.9,
+                  "unit": "square",
+                  "unit_price_usd": 103.79,
+                  "subtotal_usd": 4348.8
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 8088.9,
+                "labor": 7386.12,
+                "permit": 350.0
+              },
+              "subtotal": 15800,
+              "range_low": 14600,
+              "range_high": 17400,
+              "material_cost": 8088.9,
+              "supplementary": 0,
+              "labor_cost": 7386.12,
+              "tearoff": 2587.32,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "better": {
+              "label": "Better \u2014 Architectural (GAF Timberline HDZ)",
+              "warranty": "30\u201350 year (Lifetime ltd)",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_arch_gaf_hdz",
+                  "description": "Better \u2014 Architectural (GAF Timberline HDZ)",
+                  "qty": 146,
+                  "unit": "bundle",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 5548.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 475.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 218,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 337.9
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 218,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 261.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 306,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 1377.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 117,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 725.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 13,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 494.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 41.9,
+                  "unit": "square",
+                  "unit_price_usd": 61.75,
+                  "subtotal_usd": 2587.32
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.15)",
+                  "qty": 41.9,
+                  "unit": "square",
+                  "unit_price_usd": 103.79,
+                  "subtotal_usd": 4348.8
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 9548.9,
+                "labor": 7386.12,
+                "permit": 350.0
+              },
+              "subtotal": 17300,
+              "range_low": 15900,
+              "range_high": 19000,
+              "material_cost": 9548.9,
+              "supplementary": 0,
+              "labor_cost": 7386.12,
+              "tearoff": 2587.32,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "best": {
+              "label": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+              "warranty": "Lifetime",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_designer_ct_presidential",
+                  "description": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+                  "qty": 195,
+                  "unit": "bundle",
+                  "unit_price_usd": 62.0,
+                  "subtotal_usd": 12090.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 475.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 3,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 234.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 218,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 337.9
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 218,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 261.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 306,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 1377.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 117,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 725.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 13,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 494.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 41.9,
+                  "unit": "square",
+                  "unit_price_usd": 61.75,
+                  "subtotal_usd": 2587.32
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.15)",
+                  "qty": 41.9,
+                  "unit": "square",
+                  "unit_price_usd": 103.79,
+                  "subtotal_usd": 4348.8
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 16090.9,
+                "labor": 7386.12,
+                "permit": 350.0
+              },
+              "subtotal": 23800,
+              "range_low": 21900,
+              "range_high": 26200,
+              "material_cost": 16090.9,
+              "supplementary": 0,
+              "labor_cost": 7386.12,
+              "tearoff": 2587.32,
+              "disposal": 450.0,
+              "permit": 350.0
+            }
+          },
+          "roof_sqft": 4186,
+          "pitch_x_12": 8,
+          "linear_measurements": {
+            "eaves_lf": 185,
+            "rakes_lf": 33,
+            "ridge_lf": 84,
+            "hip_lf": 222,
+            "valley_lf": 117,
+            "total_perimeter_lf": 218,
+            "method": "perimeter_measured_from_polygon + complex_hip_style_20_facets"
+          },
+          "waste_factor": 0.16,
+          "waste_rationale": "base 10% \u00b7 +2% pitch (8:12) \u00b7 +4% complexity (20 facets) \u2192 16%",
+          "regional_factor": 0.95,
+          "valid_until": "2026-06-08",
+          "roofer": {
+            "name": "Acme Roofing",
+            "phone": "(555) 000-0000",
+            "license": "ROC-000000",
+            "logo": null,
+            "tagline": "Quality roofing since 1998"
+          }
+        }
+      },
+      {
+        "id": "t4",
+        "address": "3820 E Rosebrier St, Springfield, MO 65809",
+        "state": "MO",
+        "roof_sqft": 5511,
+        "footprint_sqft": 4929,
+        "pitch_x_12": 6,
+        "perimeter_lf": 331.8098370807322,
+        "num_segments": 18,
+        "confidence": 0.79,
+        "method": "build_path_solar_validated",
+        "final_source": "ms_buildings+vision_llm",
+        "cross_check": {
+          "solar_roof_sqft": 5566,
+          "divergence_pct": 1.0,
+          "threshold_pct": 15.0
+        },
+        "sources_summary": {
+          "google_solar": {
+            "roof_sqft": 5566,
+            "footprint_sqft": 4952,
+            "pitch_x_12": 6,
+            "pitch_multiplier": 1.118,
+            "pitch_deg": 27.0,
+            "num_segments": 18,
+            "imagery_quality": "HIGH",
+            "source": "google_solar",
+            "confidence": 0.95,
+            "building_offset_m": 2.3,
+            "lat": 37.1596926,
+            "lon": -93.21594809999999,
+            "geocode_precision": "ROOFTOP"
+          },
+          "osm": {
+            "footprint_sqft": 3682,
+            "source": "osm",
+            "confidence": 0.75
+          },
+          "ms_buildings": {
+            "footprint_sqft": 4929,
+            "source": "ms_buildings",
+            "confidence": 0.92
+          },
+          "vision_llm_pitch": {
+            "pitch_x_12": 6,
+            "pitch_multiplier": 1.118,
+            "method": "vision_llm",
+            "confidence": 0.65,
+            "reasoning": "The roof faces show moderate visible area from above with multiple hip and gable sections, and the shadow lengths relative to roof width suggest a standard moderate pitch typical of suburban homes in this style.",
+            "imagery_source": "google_static_satellite"
+          }
+        },
+        "estimate": {
+          "tiers": {
+            "good": {
+              "label": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+              "warranty": "25 year",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_3tab_oc_supreme",
+                  "description": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+                  "qty": 189,
+                  "unit": "bundle",
+                  "unit_price_usd": 28.0,
+                  "subtotal_usd": 5292.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 7,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 665.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 390.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 332,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 514.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 332,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 398.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 402,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 1809.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 154,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 954.8
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 16,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 608.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 55.1,
+                  "unit": "square",
+                  "unit_price_usd": 58.5,
+                  "subtotal_usd": 3223.35
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 55.1,
+                  "unit": "square",
+                  "unit_price_usd": 85.5,
+                  "subtotal_usd": 4711.05
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 10727.8,
+                "labor": 8384.4,
+                "permit": 350.0
+              },
+              "subtotal": 19500,
+              "range_low": 17900,
+              "range_high": 21400,
+              "material_cost": 10727.8,
+              "supplementary": 0,
+              "labor_cost": 8384.4,
+              "tearoff": 3223.35,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "better": {
+              "label": "Better \u2014 Architectural (GAF Timberline HDZ)",
+              "warranty": "30\u201350 year (Lifetime ltd)",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_arch_gaf_hdz",
+                  "description": "Better \u2014 Architectural (GAF Timberline HDZ)",
+                  "qty": 189,
+                  "unit": "bundle",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 7182.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 7,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 665.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 390.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 332,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 514.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 332,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 398.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 402,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 1809.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 154,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 954.8
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 16,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 608.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 55.1,
+                  "unit": "square",
+                  "unit_price_usd": 58.5,
+                  "subtotal_usd": 3223.35
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 55.1,
+                  "unit": "square",
+                  "unit_price_usd": 85.5,
+                  "subtotal_usd": 4711.05
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 12617.8,
+                "labor": 8384.4,
+                "permit": 350.0
+              },
+              "subtotal": 21400,
+              "range_low": 19600,
+              "range_high": 23500,
+              "material_cost": 12617.8,
+              "supplementary": 0,
+              "labor_cost": 8384.4,
+              "tearoff": 3223.35,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "best": {
+              "label": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+              "warranty": "Lifetime",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_designer_ct_presidential",
+                  "description": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+                  "qty": 252,
+                  "unit": "bundle",
+                  "unit_price_usd": 62.0,
+                  "subtotal_usd": 15624.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 7,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 665.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 390.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 332,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 514.6
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 332,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 398.4
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 402,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 1809.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 154,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 954.8
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 16,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 608.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 55.1,
+                  "unit": "square",
+                  "unit_price_usd": 58.5,
+                  "subtotal_usd": 3223.35
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 55.1,
+                  "unit": "square",
+                  "unit_price_usd": 85.5,
+                  "subtotal_usd": 4711.05
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 21059.8,
+                "labor": 8384.4,
+                "permit": 350.0
+              },
+              "subtotal": 29800,
+              "range_low": 27400,
+              "range_high": 32800,
+              "material_cost": 21059.8,
+              "supplementary": 0,
+              "labor_cost": 8384.4,
+              "tearoff": 3223.35,
+              "disposal": 450.0,
+              "permit": 350.0
+            }
+          },
+          "roof_sqft": 5511,
+          "pitch_x_12": 6,
+          "linear_measurements": {
+            "eaves_lf": 282,
+            "rakes_lf": 50,
+            "ridge_lf": 110,
+            "hip_lf": 292,
+            "valley_lf": 154,
+            "total_perimeter_lf": 332,
+            "method": "perimeter_measured_from_polygon + complex_hip_style_18_facets"
+          },
+          "waste_factor": 0.14,
+          "waste_rationale": "base 10% \u00b7 +4% complexity (18 facets) \u2192 14%",
+          "regional_factor": 0.9,
+          "valid_until": "2026-06-08",
+          "roofer": {
+            "name": "Acme Roofing",
+            "phone": "(555) 000-0000",
+            "license": "ROC-000000",
+            "logo": null,
+            "tagline": "Quality roofing since 1998"
+          }
+        }
+      },
+      {
+        "id": "t5",
+        "address": "1261 20th Street, Newport News, VA 23607",
+        "state": "VA",
+        "roof_sqft": 6451,
+        "footprint_sqft": 5957,
+        "pitch_x_12": 5,
+        "perimeter_lf": 330.9805469756902,
+        "num_segments": 6,
+        "confidence": 0.79,
+        "method": "build_path_solar_validated",
+        "final_source": "ms_buildings+vision_llm",
+        "cross_check": {
+          "solar_roof_sqft": 6118,
+          "divergence_pct": 5.2,
+          "threshold_pct": 15.0
+        },
+        "sources_summary": {
+          "google_solar": {
+            "roof_sqft": 6118,
+            "footprint_sqft": 5814,
+            "pitch_x_12": 4,
+            "pitch_multiplier": 1.054,
+            "pitch_deg": 18.1,
+            "num_segments": 6,
+            "imagery_quality": "HIGH",
+            "source": "google_solar",
+            "confidence": 0.95,
+            "building_offset_m": 5.1,
+            "lat": 36.9845554,
+            "lon": -76.4016532,
+            "geocode_precision": "ROOFTOP"
+          },
+          "osm": {
+            "footprint_sqft": 5861,
+            "source": "osm",
+            "confidence": 0.9
+          },
+          "ms_buildings": {
+            "footprint_sqft": 5957,
+            "source": "ms_buildings",
+            "confidence": 0.92
+          },
+          "vision_llm_pitch": {
+            "pitch_x_12": 5,
+            "pitch_multiplier": 1.083,
+            "method": "vision_llm",
+            "confidence": 0.65,
+            "reasoning": "The roof faces show relatively broad visible area from above with moderate shadow lengths, suggesting a low-to-moderate pitch typical of ranch-style homes, consistent with a 5:12 pitch.",
+            "imagery_source": "google_static_satellite"
+          }
+        },
+        "estimate": {
+          "tiers": {
+            "good": {
+              "label": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+              "warranty": "25 year",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_3tab_oc_supreme",
+                  "description": "Good \u2014 3-Tab Asphalt (Owens Corning Supreme)",
+                  "qty": 219,
+                  "unit": "bundle",
+                  "unit_price_usd": 28.0,
+                  "subtotal_usd": 6132.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 8,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 760.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 390.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 331,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 513.05
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 331,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 397.2
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 471,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 2119.5
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 181,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 1122.2
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 19,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 722.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 64.5,
+                  "unit": "square",
+                  "unit_price_usd": 65.0,
+                  "subtotal_usd": 4192.5
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 64.5,
+                  "unit": "square",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 6127.5
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 12251.95,
+                "labor": 10770.0,
+                "permit": 350.0
+              },
+              "subtotal": 23400,
+              "range_low": 21500,
+              "range_high": 25700,
+              "material_cost": 12251.95,
+              "supplementary": 0,
+              "labor_cost": 10770.0,
+              "tearoff": 4192.5,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "better": {
+              "label": "Better \u2014 Architectural (GAF Timberline HDZ)",
+              "warranty": "30\u201350 year (Lifetime ltd)",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_arch_gaf_hdz",
+                  "description": "Better \u2014 Architectural (GAF Timberline HDZ)",
+                  "qty": 219,
+                  "unit": "bundle",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 8322.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 8,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 760.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 390.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 331,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 513.05
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 331,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 397.2
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 471,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 2119.5
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 181,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 1122.2
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 19,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 722.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 64.5,
+                  "unit": "square",
+                  "unit_price_usd": 65.0,
+                  "subtotal_usd": 4192.5
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 64.5,
+                  "unit": "square",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 6127.5
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 14441.95,
+                "labor": 10770.0,
+                "permit": 350.0
+              },
+              "subtotal": 25600,
+              "range_low": 23500,
+              "range_high": 28100,
+              "material_cost": 14441.95,
+              "supplementary": 0,
+              "labor_cost": 10770.0,
+              "tearoff": 4192.5,
+              "disposal": 450.0,
+              "permit": 350.0
+            },
+            "best": {
+              "label": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+              "warranty": "Lifetime",
+              "line_items": [
+                {
+                  "category": "materials",
+                  "sku": "shingles_designer_ct_presidential",
+                  "description": "Best \u2014 Designer Impact-Resistant (CertainTeed Presidential)",
+                  "qty": 292,
+                  "unit": "bundle",
+                  "unit_price_usd": 62.0,
+                  "subtotal_usd": 18104.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "underlayment_synthetic",
+                  "description": "Synthetic underlayment",
+                  "qty": 8,
+                  "unit": "roll",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 760.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "ice_water_shield",
+                  "description": "Ice & water shield (eave courses)",
+                  "qty": 5,
+                  "unit": "roll",
+                  "unit_price_usd": 78.0,
+                  "subtotal_usd": 390.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "drip_edge",
+                  "description": "Drip edge \u2014 eaves + rakes",
+                  "qty": 331,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.55,
+                  "subtotal_usd": 513.05
+                },
+                {
+                  "category": "materials",
+                  "sku": "starter_strip",
+                  "description": "Starter strip",
+                  "qty": 331,
+                  "unit": "linear ft",
+                  "unit_price_usd": 1.2,
+                  "subtotal_usd": 397.2
+                },
+                {
+                  "category": "materials",
+                  "sku": "ridge_cap_shingles",
+                  "description": "Ridge cap shingles (ridge + hip)",
+                  "qty": 471,
+                  "unit": "linear ft",
+                  "unit_price_usd": 4.5,
+                  "subtotal_usd": 2119.5
+                },
+                {
+                  "category": "materials",
+                  "sku": "valley_flashing",
+                  "description": "Valley flashing (W-style metal)",
+                  "qty": 181,
+                  "unit": "linear ft",
+                  "unit_price_usd": 6.2,
+                  "subtotal_usd": 1122.2
+                },
+                {
+                  "category": "materials",
+                  "sku": "pipe_boots",
+                  "description": "Pipe boots & vent flashings",
+                  "qty": 3,
+                  "unit": "ea",
+                  "unit_price_usd": 32.0,
+                  "subtotal_usd": 96.0
+                },
+                {
+                  "category": "materials",
+                  "sku": "roofing_nails",
+                  "description": "Roofing nails (5 lb boxes)",
+                  "qty": 19,
+                  "unit": "box",
+                  "unit_price_usd": 38.0,
+                  "subtotal_usd": 722.0
+                },
+                {
+                  "category": "labor",
+                  "sku": "tearoff",
+                  "description": "Tear-off existing roof",
+                  "qty": 64.5,
+                  "unit": "square",
+                  "unit_price_usd": 65.0,
+                  "subtotal_usd": 4192.5
+                },
+                {
+                  "category": "labor",
+                  "sku": "install",
+                  "description": "Install new roof (pitch-adjusted, \u00d71.00)",
+                  "qty": 64.5,
+                  "unit": "square",
+                  "unit_price_usd": 95.0,
+                  "subtotal_usd": 6127.5
+                },
+                {
+                  "category": "labor",
+                  "sku": "disposal",
+                  "description": "Dumpster + dump fees",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 450.0,
+                  "subtotal_usd": 450.0
+                },
+                {
+                  "category": "permit",
+                  "sku": "permit_allowance",
+                  "description": "Permit + inspection allowance",
+                  "qty": 1,
+                  "unit": "job",
+                  "unit_price_usd": 350.0,
+                  "subtotal_usd": 350.0
+                }
+              ],
+              "subtotals_by_category": {
+                "materials": 24223.95,
+                "labor": 10770.0,
+                "permit": 350.0
+              },
+              "subtotal": 35300,
+              "range_low": 32500,
+              "range_high": 38900,
+              "material_cost": 24223.95,
+              "supplementary": 0,
+              "labor_cost": 10770.0,
+              "tearoff": 4192.5,
+              "disposal": 450.0,
+              "permit": 350.0
+            }
+          },
+          "roof_sqft": 6451,
+          "pitch_x_12": 5,
+          "linear_measurements": {
+            "eaves_lf": 281,
+            "rakes_lf": 50,
+            "ridge_lf": 129,
+            "hip_lf": 342,
+            "valley_lf": 181,
+            "total_perimeter_lf": 331,
+            "method": "perimeter_measured_from_polygon + complex_hip_style_6_facets"
+          },
+          "waste_factor": 0.13,
+          "waste_rationale": "base 10% \u00b7 +3% complexity (6 facets) \u2192 13%",
+          "regional_factor": 1.0,
+          "valid_until": "2026-06-08",
+          "roofer": {
+            "name": "Acme Roofing",
+            "phone": "(555) 000-0000",
+            "license": "ROC-000000",
+            "logo": null,
+            "tagline": "Quality roofing since 1998"
+          }
+        }
+      }
+    ]
+  }
+}
