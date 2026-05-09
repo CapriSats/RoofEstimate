@@ -1,0 +1,63 @@
+# ── Secrets ──────────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+ec2-instance.json
+
+# ── Python ───────────────────────────────────────────────────────────────────
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Node / Vite UI ───────────────────────────────────────────────────────────
+ui/node_modules/
+ui/dist/
+ui/.vite/
+ui/.tanstack/
+ui/.routes/
+ui/.env.production
+ui/*.tsbuildinfo
+
+# ── Large/regenerable data ───────────────────────────────────────────────────
+weights/
+data/ms_buildings_cache/
+data/footprints/
+data/ms_footprints/
+
+# ── Pipeline outputs (regenerated on every run) ──────────────────────────────
+outputs/debug/
+outputs/calibration/
+outputs/integrated/
+outputs/test_results/
+outputs/test_vision/
+outputs/grounded_sam_visualizations/
+outputs/grounding_dino_test_results.json
+outputs/grounded_sam_test_results.json
+outputs/cli/
+outputs/visualizations/
+outputs/validation/
+outputs/validation_run.log
+outputs/line_items_comparison.json
+
+# ── OS noise ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+
+# ── Editor/IDE noise ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.claude/
+.cursor/
+jobnimbus-hackathon-2026/
+
+# ── Internal Documentation (not for public repo) ────────────────────────────
+.internal/

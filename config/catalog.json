@@ -1,0 +1,46 @@
+{
+  "tiers": {
+    "good": {
+      "label": "Good — 3-Tab Asphalt",
+      "material_per_sqft": 1.20,
+      "warranty": "25 year"
+    },
+    "better": {
+      "label": "Better — Architectural (GAF Timberline HDZ)",
+      "material_per_sqft": 1.80,
+      "warranty": "30–50 year"
+    },
+    "best": {
+      "label": "Best — Designer / Impact-Resistant",
+      "material_per_sqft": 3.50,
+      "warranty": "Lifetime"
+    }
+  },
+  "supplementary_per_sqft": 0.65,
+  "base_labor_per_sqft": 1.75,
+  "tearoff_per_sqft": 1.20,
+  "disposal_per_sqft": 0.60,
+  "permit_allowance": 350,
+  "regional_factors": {
+    "AL": 0.90, "AK": 1.50, "AZ": 0.95, "AR": 0.88,
+    "CA": 1.30, "CO": 1.05, "CT": 1.20, "DE": 1.05,
+    "FL": 1.05, "GA": 0.93, "HI": 1.60, "ID": 0.90,
+    "IL": 1.05, "IN": 0.92, "IA": 0.90, "KS": 0.88,
+    "KY": 0.90, "LA": 0.92, "ME": 1.05, "MD": 1.10,
+    "MA": 1.25, "MI": 1.00, "MN": 1.05, "MS": 0.85,
+    "MO": 0.90, "MT": 0.92, "NE": 0.90, "NV": 1.05,
+    "NH": 1.10, "NJ": 1.20, "NM": 0.90, "NY": 1.35,
+    "NC": 0.95, "ND": 0.92, "OH": 0.98, "OK": 0.88,
+    "OR": 1.05, "PA": 1.05, "RI": 1.20, "SC": 0.92,
+    "SD": 0.90, "TN": 0.90, "TX": 0.95, "UT": 0.95,
+    "VT": 1.05, "VA": 1.00, "WA": 1.10, "WV": 0.88,
+    "WI": 1.00, "WY": 0.92
+  },
+  "default_roofer": {
+    "name": "Acme Roofing",
+    "phone": "(555) 000-0000",
+    "license": "ROC-000000",
+    "logo": null,
+    "tagline": "Quality roofing since 1998"
+  }
+}

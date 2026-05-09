@@ -1,0 +1,61 @@
+{
+  "example_properties": [
+    {
+      "id": "ex1",
+      "address": "21106 Kenswick Meadows Ct, Humble, TX 77338",
+      "state": "TX",
+      "ref_a_sqft": 2443,
+      "ref_b_sqft": 2343,
+      "ref_pitch": "6:12",
+      "midpoint": 2393,
+      "tolerance_pct": 3.0
+    },
+    {
+      "id": "ex2",
+      "address": "5914 Copper Lilly Lane, Spring, TX 77389",
+      "state": "TX",
+      "ref_a_sqft": 4391,
+      "ref_b_sqft": 4296,
+      "ref_pitch": "8:12",
+      "midpoint": 4344,
+      "tolerance_pct": 3.0
+    },
+    {
+      "id": "ex3",
+      "address": "122 NW 13th Ave, Cape Coral, FL 33993",
+      "state": "FL",
+      "ref_a_sqft": 2917,
+      "ref_b_sqft": 2851,
+      "ref_pitch": "6:12",
+      "midpoint": 2884,
+      "tolerance_pct": 3.0
+    },
+    {
+      "id": "ex4",
+      "address": "14132 Trenton Ave, Orland Park, IL 60462",
+      "state": "IL",
+      "ref_a_sqft": 2990,
+      "ref_b_sqft": 2935,
+      "ref_pitch": "4:12",
+      "midpoint": 2963,
+      "tolerance_pct": 3.0
+    },
+    {
+      "id": "ex5",
+      "address": "835 S Cobble Creek, Nixa, MO 65714",
+      "state": "MO",
+      "ref_a_sqft": 3070,
+      "ref_b_sqft": 3017,
+      "ref_pitch": "8:12",
+      "midpoint": 3044,
+      "tolerance_pct": 3.0
+    }
+  ],
+  "test_properties": [
+    { "id": "t1", "address": "3561 E 102nd Ct, Thornton, CO 80229",        "state": "CO" },
+    { "id": "t2", "address": "1612 S Canton Ave, Springfield, MO 65802",   "state": "MO" },
+    { "id": "t3", "address": "6310 Laguna Bay Court, Houston, TX 77041",   "state": "TX" },
+    { "id": "t4", "address": "3820 E Rosebrier St, Springfield, MO 65809", "state": "MO" },
+    { "id": "t5", "address": "1261 20th Street, Newport News, VA 23607",   "state": "VA" }
+  ]
+}
