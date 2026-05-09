@@ -1,6 +1,8 @@
 import type { SourcesBreakdown as Sources } from "@/hooks/usePipeline";
 import { formatSqft } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 interface Props {
   sources?: Sources;
@@ -34,6 +36,8 @@ function isRejected(finalSource: string | undefined, sourceName: string): boolea
 }
 
 export function SourcesBreakdown({ sources, mode, finalSource }: Props) {
+  const [showCrossCheck, setShowCrossCheck] = useState(false);
+
   if (!sources) return null;
 
   const { google_solar, osm, ms_buildings, vision_llm_pitch } = sources;
@@ -42,7 +46,7 @@ export function SourcesBreakdown({ sources, mode, finalSource }: Props) {
     <div className="rounded-xl border border-border bg-card p-5 shadow-sm">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-          Sources breakdown
+          Measurement sources
         </h3>
         {mode && (
           <Badge variant="outline" className="font-mono text-xs">
@@ -51,75 +55,111 @@ export function SourcesBreakdown({ sources, mode, finalSource }: Props) {
         )}
       </div>
 
-      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-        <SourceCard
-          name="Google Solar API"
-          highlighted={isUsed(finalSource, "google_solar") || finalSource === "fusion"}
-        >
-          {google_solar ? (
-            <>
-              <Row label="Roof area" value={`${formatSqft(google_solar.roof_sqft)} sqft`} />
-              <Row label="Footprint" value={`${formatSqft(google_solar.footprint_sqft)} sqft`} />
-              <Row label="Pitch" value={`${google_solar.pitch_x_12}:12 (${google_solar.pitch_deg?.toFixed?.(1)}°)`} />
-              <Row label="Segments" value={String(google_solar.num_segments ?? "—")} />
-              <Row label="Imagery quality" value={google_solar.imagery_quality ?? "—"} />
-              <Row label="Confidence" value={`${Math.round(google_solar.confidence * 100)}%`} />
-            </>
-          ) : (
-            <Empty reason={mode === "off" ? "Disabled by SOLAR_MODE=off" : "No coverage / API miss"} />
-          )}
-        </SourceCard>
+      {/* PRIMARY BUILD PATH - Always prominent */}
+      <div className="mb-4">
+        <div className="mb-2 flex items-center gap-2">
+          <span className="rounded bg-primary/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-primary">
+            Primary Build Path
+          </span>
+          <span className="text-xs text-muted-foreground">MS Buildings polygon × Vision LLM pitch</span>
+        </div>
 
-        <SourceCard
-          name="MS Buildings"
-          highlighted={isUsed(finalSource, "ms_buildings") || finalSource === "fusion"}
-          rejected={isRejected(finalSource, "ms_buildings")}
-        >
-          {ms_buildings ? (
-            <>
-              <Row label="Footprint" value={`${formatSqft(ms_buildings.footprint_sqft)} sqft`} />
-              <Row label="Source" value={ms_buildings.source} />
-              <Row label="Confidence" value={`${Math.round(ms_buildings.confidence * 100)}%`} />
-            </>
-          ) : (
-            <Empty reason="No nearby building in MS data" />
-          )}
-        </SourceCard>
+        <div className="grid gap-3 md:grid-cols-2">
+          <SourceCard
+            name="MS Buildings Footprint"
+            highlighted={isUsed(finalSource, "ms_buildings") || finalSource === "fusion"}
+            rejected={isRejected(finalSource, "ms_buildings")}
+          >
+            {ms_buildings ? (
+              <>
+                <Row label="Footprint" value={`${formatSqft(ms_buildings.footprint_sqft)} sqft`} />
+                <Row label="Source" value={ms_buildings.source} />
+                <Row label="Confidence" value={`${Math.round(ms_buildings.confidence * 100)}%`} />
+              </>
+            ) : (
+              <Empty reason="No nearby building in MS data" />
+            )}
+          </SourceCard>
 
-        <SourceCard
-          name="OSM polygon"
-          highlighted={isUsed(finalSource, "osm") || finalSource === "fusion"}
-          rejected={isRejected(finalSource, "osm")}
-        >
-          {osm ? (
-            <>
+          <SourceCard name="Vision LLM Pitch" highlighted={!!vision_llm_pitch}>
+            {vision_llm_pitch ? (
+              <>
+                <Row label="Pitch" value={`${vision_llm_pitch.pitch_x_12}:12`} />
+                <Row label="Multiplier" value={`×${vision_llm_pitch.pitch_multiplier}`} />
+                <Row label="Method" value={vision_llm_pitch.method} />
+                <Row label="Confidence" value={`${Math.round(vision_llm_pitch.confidence * 100)}%`} />
+                {vision_llm_pitch.reasoning && (
+                  <p className="mt-2 line-clamp-3 text-[11px] italic leading-snug text-muted-foreground">
+                    "{vision_llm_pitch.reasoning}"
+                  </p>
+                )}
+              </>
+            ) : (
+              <Empty reason="Skipped (mode=primary with Solar hit)" />
+            )}
+          </SourceCard>
+        </div>
+      </div>
+
+      {/* OSM Fallback - shown only if used */}
+      {osm && (
+        <div className="mb-4">
+          <div className="mb-2">
+            <span className="rounded bg-muted px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Fallback polygon
+            </span>
+          </div>
+          <div className="grid gap-3">
+            <SourceCard
+              name="OSM polygon"
+              highlighted={isUsed(finalSource, "osm")}
+              rejected={isRejected(finalSource, "osm")}
+            >
               <Row label="Footprint" value={`${formatSqft(osm.footprint_sqft)} sqft`} />
               <Row label="Source" value={osm.source} />
               <Row label="Confidence" value={`${Math.round(osm.confidence * 100)}%`} />
-            </>
-          ) : (
-            <Empty reason="No building polygon nearby in OSM" />
-          )}
-        </SourceCard>
+            </SourceCard>
+          </div>
+        </div>
+      )}
 
-        <SourceCard name="Vision LLM pitch" highlighted={false}>
-          {vision_llm_pitch ? (
-            <>
-              <Row label="Pitch" value={`${vision_llm_pitch.pitch_x_12}:12`} />
-              <Row label="Multiplier" value={`×${vision_llm_pitch.pitch_multiplier}`} />
-              <Row label="Method" value={vision_llm_pitch.method} />
-              <Row label="Confidence" value={`${Math.round(vision_llm_pitch.confidence * 100)}%`} />
-              {vision_llm_pitch.reasoning && (
-                <p className="mt-2 line-clamp-3 text-[11px] italic leading-snug text-muted-foreground">
-                  "{vision_llm_pitch.reasoning}"
-                </p>
-              )}
-            </>
-          ) : (
-            <Empty reason="Skipped (mode=primary with Solar hit)" />
+      {/* SOLAR CROSS-CHECK - Collapsible, de-emphasized */}
+      {google_solar && mode !== "off" && (
+        <div className="border-t border-border/50 pt-4">
+          <button
+            onClick={() => setShowCrossCheck(!showCrossCheck)}
+            className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left transition-colors hover:bg-muted/50"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Cross-check details
+              </span>
+              <span className="text-xs text-muted-foreground/70">(Google Solar API)</span>
+            </div>
+            {showCrossCheck ? (
+              <ChevronUp className="h-4 w-4 text-muted-foreground" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            )}
+          </button>
+
+          {showCrossCheck && (
+            <div className="mt-3 grid gap-3">
+              <SourceCard
+                name="Google Solar API"
+                highlighted={isUsed(finalSource, "google_solar")}
+              >
+                <Row label="Roof area" value={`${formatSqft(google_solar.roof_sqft)} sqft`} />
+                <Row label="Footprint" value={`${formatSqft(google_solar.footprint_sqft)} sqft`} />
+                <Row label="Pitch" value={`${google_solar.pitch_x_12}:12 (${google_solar.pitch_deg?.toFixed?.(1)}°)`} />
+                <Row label="Segments" value={String(google_solar.num_segments ?? "—")} />
+                <Row label="Imagery quality" value={google_solar.imagery_quality ?? "—"} />
+                <Row label="Confidence" value={`${Math.round(google_solar.confidence * 100)}%`} />
+              </SourceCard>
+            </div>
           )}
-        </SourceCard>
-      </div>
+        </div>
+      )}
     </div>
   );
 }

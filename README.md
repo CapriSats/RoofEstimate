@@ -5,6 +5,8 @@
 
 [![Build, don't buy compliant](https://img.shields.io/badge/build--don't--buy-compliant-green)]() [![Provider routing](https://img.shields.io/badge/providers-6%20pluggable-blue)]() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**🎬 [Watch the Video Demo](https://notebooklm.google.com/notebook/e28102b2-eb37-4863-b4fc-c37782f667bd/artifact/786a02bf-e0d4-41bf-9c29-c91c3799b97e?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_)** — NotebookLM-generated video walkthrough
+
 **🎙️ [Listen to the NotebookLM Podcast](https://notebooklm.google.com/notebook/bda78a8b-d886-4754-9008-88cbc459c08a/artifact/e123e6d8-37ac-497d-aca7-5e08e7089539?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_)** — AI-generated deep dive on the system architecture and design decisions (10 min)
 
 ---
